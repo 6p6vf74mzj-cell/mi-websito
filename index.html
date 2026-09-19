@@ -43,7 +43,7 @@
 
     <div id="ergebnis"></div>
 
-<div id="frage2" style="display:none;">
+<div id="frage2">
                    <h2>What are your goals for the future?</h2>
                    <button onclick="zeigeZiel('I want to learn more about myself')">I want to learn more about myself</button>
                    <button onclick="zeigeZiel('I would love to become more confident')">I would love to become more confident</button>
@@ -73,17 +73,6 @@
                     heartbroken: "Even collapsed stars don't disappear. They become the darkness that holds the light of others. What breaks in me makes room for what's coming.",
                     stressed: "Since stars shine bright under pressure, I also grow beacuse of the situations that challenge me."
                 };
-
-                // Schritt A: Affirmation anzeigen
-                document.getElementById("ergebnis").innerHTML =
-                    "<p>" + affirmation[gefuel] + "</p>";
-
-                // Schritt B: Gefühls-Button ausblenden (Good/Bad-Auswahl verschwindet)
-                document.getElementById("frageGood").sytle.display = "none";
-                document.getElementById("frageBad").style.display = "none";
-
-                // Schritt C: Ziel- Frage einblenden
-                document.getElementById("frage2").stlye.display = "block";
 }
 
         function zeigeZiel(ziel) {
