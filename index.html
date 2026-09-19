@@ -20,11 +20,11 @@
 <body>
     <h1>Here to give you a peaceful mind.</h1>
     <p>Whatever is on your mind -> this place hopefully gives you positive vibes...</p>
+   
     <div id="frage1">
         <h2>How do you feel today?</h2>
         <button onclick="zeigeGefuele('good')">😊 Good</button>
         <button onclick="zeigeGefuele('bad')">😔 Bad</button>
-        
     </div>
 
     <div id="frageGood" style="display:none;">
@@ -39,10 +39,18 @@
         <button onclick="zeigeAffirmation('anxious')">Anxious</button>
         <button onclick="zeigeAffirmation('heartbroken')">Heartbroken</button>
         <button onclick="zeigeAffirmation('stressed')">Stressed</button>
-
     </div>
 
-    <div id="ergebnis">
+    <div id="ergebnis"></div>
+
+<div id="frage2"> style="display:none;">
+                   <h2>What are your goals for the future?</h2>
+                   <button onclick="zeigeZiel('I want to learn more about myself')">I want to learn more about myself</button>
+                   <button onclick="zeigeZiel('I would love to become more confident')">I would love to become more confident</button>
+                   <button onclick="zeigeZiel('I would like to appreciate my body for what it is able to do')">I would like to appreciate my body for what it is able to do</button>
+</div>
+
+    <div id="ergebnis2"></div>
 
         <script>
             function zeigeGefuele(stimmung) {
@@ -66,18 +74,28 @@
                     stressed: "Since stars shine bright under pressure, I also grow beacuse of the situations that challenge me."
                 };
 
+                // Schritt A: Affirmation anzeigen
                 document.getElementById("ergebnis").innerHTML =
                     "<p>" + affirmation[gefuel] + "</p>";
 
-                   <div id="frage 2">
-                   <h2>What are your goals for the future?</h2>
-                   <button onclick="zeigeZiel('I want to learn more about myself')">I want to learn more about myself</button>
-                   <button onclick="zeigeZiel('I would love to become more confident')">I would love to become more confident</button>
-                   <button onclick="zeigeZiel('I would like to appreciate my body for what it is able to do')">I would like to appreciate my body for what it is able to do</button>
-            }
-        </script>
-    </div>
+                // Schritt B: Gefühls-Button ausbllenden (Good/Bad-Auswahl verschwindet)
+                document.getElementById("frageGood").sytle.display = "none";
+                document.getElementById("frageBad").style.display = "none";
 
+                // Schritt C: Ziel- Frage einblenden
+                document.getElementById("frage2").stlye.display = "block";
+}
 
+        function zeigeZiel(ziel) {
+            const antworten = {
+                lernen: "The universe took 13 billion years to become curious about itself through you. Keep discovering.",
+                selbstvertrauen: "Every star holds its shape through its own inner gravity - so do you.",
+                koerper: "Your body is stardust that learned to move, breathe, and carry you through this life. That's worth appreciating."
+            };
+
+            document.getElementById("ergebnis2").innerHTML =
+                "<p>" + antworten[ziel] + "</p>";
+        }
+    </script>
 </body>
 </html>
